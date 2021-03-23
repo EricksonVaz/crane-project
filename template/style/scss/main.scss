@@ -1,0 +1,7 @@
+@import "./partials/reset";
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
+@import "./partials/colors";
+
+body{
+    background-color: $primary-color;
+}

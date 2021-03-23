@@ -1,0 +1,24 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "A simple template based on the crane example from the flutter gallery web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "parcel",
+    "sass"
+  ],
+  "author": "EricksonVaz",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
