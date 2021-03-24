@@ -1,0 +1,89 @@
+.main-area{
+    background-color: $secondary-background-color;
+    flex-grow: 1;
+    border-radius: 1rem;
+    padding: 0 10rem;
+
+    .title{
+        font-size: 1.2rem;
+        color: darken($background-color, 30%) ;
+        font-weight: normal;
+    }
+
+    .container-destiny{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .distiny-item{
+            display: flex;
+            flex-direction: column;
+            height: 40rem;
+            flex-basis: 40rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            cursor: pointer;
+
+            .sample-image{
+                width: 100%;
+                background-color: gainsboro;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-grow: 1;
+                &::before{
+                    content: "Image Here";
+                    color: $secondary-background-color;
+                    font-size: 4rem;
+                    font-weight: bold;
+                }
+            }
+
+            .destiny-info{
+                padding: 1rem 1.5rem;
+
+                .destiny-title{
+                    font-weight: 300;
+                    font-size: 1.7rem;
+                }
+
+                .destiny-status{
+                    font-weight: 200;
+                    color: darken($primary-text-color, 15%) ;
+                    font-size: 1.4rem;
+                }
+            }
+
+            &:hover{
+                box-shadow: 0 0 .5rem $primary-text-color;
+            }
+
+            @include responsive-max(1530px){
+                flex-basis: 35rem;
+            }
+
+            @include responsive-max(1270px){
+                flex-basis: 35rem;
+                margin-left: 30px;
+            }
+
+            @include responsive-max(590px){
+                margin: 0;
+            }
+
+            @include responsive-max(500px){
+                width: 100%;
+            }
+            
+        }
+        @include responsive-max(1050px){
+            justify-content: center;
+        }
+        
+    }
+
+    @include responsive-max(590px){
+        padding: 0 2rem;
+    }
+}

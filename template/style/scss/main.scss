@@ -1,7 +1,16 @@
 @import "./partials/reset";
-@import "../../node_modules/font-awesome/css/font-awesome.min.css";
 @import "./partials/colors";
+@import "./partials/mixins";
+@import "./partials/placeholders";
+
 
 body{
+    @extend %display-flex;
+    flex-direction: column;
     background-color: $primary-color;
+    min-height: 100vh;
+
+    @import "./partials/main-header";
+
+    @import "./partials/main-area";
 }

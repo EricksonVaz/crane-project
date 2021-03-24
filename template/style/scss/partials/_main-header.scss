@@ -1,0 +1,123 @@
+.main-header{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 10rem;
+
+    .main-nav{
+        @extend %display-flex;
+
+        .site-brand{
+            font-size: 6rem;
+            color: $border-color;
+            transform: rotateY(180deg);
+        }
+
+        .nav-group-link{
+            @extend %display-flex;
+            padding: 0;
+            width: 30rem;
+            margin-left: 2rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .nav-item{
+                @extend %display-flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-link{
+                border-radius: 1.5rem;
+                font-size: 1.3rem;
+                font-weight: 500;
+                padding: .5rem 1.8rem;
+                color: $inactive-nav-text-color;
+                text-transform: uppercase;
+                &.active{
+                    border: 2px solid $border-color;
+                    color: $border-color;
+                }
+            }
+            @include responsive-max(400px){
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+    .search-inputs{
+        width: 100%;
+        form{
+            @extend %display-flex;
+            justify-content: space-between;
+            width: 100%;
+            .input-group{
+                @extend %display-flex;
+                background-color: lighten($primary-color, 5%);
+                padding: 1rem;
+                flex-grow: 1;
+                min-width: 22rem;
+                border-radius: .5rem;
+                align-items: center;
+
+                %input-font-settings{
+                    font-size: 1.7rem;
+                    color: $text-input-color;
+                }
+                input{
+                    @extend %input-font-settings;
+                    flex-grow: 1;
+                    width: 100%;
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                    color: $text-input-color;
+                    margin-left: 1rem;
+
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+                i{
+                    @extend %input-font-settings;
+                }
+
+            }
+            @for $i from 2 through 3{
+                .input-group:nth-child(#{$i}){
+                    margin: 0 2rem;
+                    @if($i==2){
+                        margin-right: 0;
+                    }
+                    @if($i==3){
+                        i{
+                            transform: rotate(270deg);
+                        }
+                    }
+                }
+            }
+
+            @include responsive-max(1040px){
+                flex-wrap: wrap;
+                justify-content: center;
+                .input-group{
+                    flex-grow: 0;
+                    margin:1rem 2rem!important;
+                }
+            }
+        }
+        
+    }
+
+    @include responsive-max(1315px){
+        padding: 1rem;
+        flex-wrap: wrap;
+        
+    }
+
+    @include responsive-max(1040px){
+        .main-nav{
+            justify-content: center;
+        }
+    }
+
+}
